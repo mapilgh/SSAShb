@@ -1,0 +1,658 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer sqlvm34666 DestinationDatabase",
+        "connectionString": "Provider=SQLOLEDB;Data Source=sqlvm34666;Initial Catalog=DestinationDatabase;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "sqladmin",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "D_Customers",
+        "columns": [
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "CustomerID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerName",
+            "dataType": "string",
+            "sourceColumn": "CustomerName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CustomerCategoryName",
+            "dataType": "string",
+            "sourceColumn": "CustomerCategoryName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CreditLimit",
+            "dataType": "double",
+            "sourceColumn": "CreditLimit",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "FullName",
+            "dataType": "string",
+            "sourceColumn": "FullName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PreferredName",
+            "dataType": "string",
+            "sourceColumn": "PreferredName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PhoneNumber",
+            "dataType": "string",
+            "sourceColumn": "PhoneNumber",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CityName",
+            "dataType": "string",
+            "sourceColumn": "CityName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StateProvinceName",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SalesTerritory",
+            "dataType": "string",
+            "sourceColumn": "SalesTerritory",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Customers",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [agg].[DimCustomers].*   FROM [agg].[DimCustomers] ",
+              "dataSource": "SqlServer sqlvm34666 DestinationDatabase"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [agg].[DimCustomers].*   FROM [agg].[DimCustomers] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimCustomers"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "agg"
+          }
+        ]
+      },
+      {
+        "name": "D_Date",
+        "columns": [
+          {
+            "name": "ID",
+            "dataType": "int64",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheDate",
+            "dataType": "string",
+            "sourceColumn": "TheDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TheDay",
+            "dataType": "int64",
+            "sourceColumn": "TheDay",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheDayName",
+            "dataType": "string",
+            "sourceColumn": "TheDayName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TheWeek",
+            "dataType": "int64",
+            "sourceColumn": "TheWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheISOWeek",
+            "dataType": "int64",
+            "sourceColumn": "TheISOWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheDayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "TheDayOfWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheMonth",
+            "dataType": "int64",
+            "sourceColumn": "TheMonth",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheMonthName",
+            "dataType": "string",
+            "sourceColumn": "TheMonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TheQuarter",
+            "dataType": "int64",
+            "sourceColumn": "TheQuarter",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheYear",
+            "dataType": "int64",
+            "sourceColumn": "TheYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TheFirstOfMonth",
+            "dataType": "string",
+            "sourceColumn": "TheFirstOfMonth",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TheLastOfYear",
+            "dataType": "string",
+            "sourceColumn": "TheLastOfYear",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TheDayOfYear",
+            "dataType": "int64",
+            "sourceColumn": "TheDayOfYear",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Date",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [agg].[DimDate].*   FROM [agg].[DimDate] ",
+              "dataSource": "SqlServer sqlvm34666 DestinationDatabase"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [agg].[DimDate].*   FROM [agg].[DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "agg"
+          }
+        ]
+      },
+      {
+        "name": "D_DeliveryMethods",
+        "columns": [
+          {
+            "name": "DeliveryMethodID",
+            "dataType": "int64",
+            "sourceColumn": "DeliveryMethodID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DeliveryMethodName",
+            "dataType": "string",
+            "sourceColumn": "DeliveryMethodName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_DeliveryMethods",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [agg].[DimDeliveryMethods].*   FROM [agg].[DimDeliveryMethods] ",
+              "dataSource": "SqlServer sqlvm34666 DestinationDatabase"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [agg].[DimDeliveryMethods].*   FROM [agg].[DimDeliveryMethods] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDeliveryMethods"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "agg"
+          }
+        ]
+      },
+      {
+        "name": "D_People",
+        "columns": [
+          {
+            "name": "PersonID",
+            "dataType": "int64",
+            "sourceColumn": "PersonID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FullName",
+            "dataType": "string",
+            "sourceColumn": "FullName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PreferredName",
+            "dataType": "string",
+            "sourceColumn": "PreferredName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SearchName",
+            "dataType": "string",
+            "sourceColumn": "SearchName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "IsSystemUser",
+            "dataType": "boolean",
+            "sourceColumn": "IsSystemUser",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "IsEmployee",
+            "dataType": "boolean",
+            "sourceColumn": "IsEmployee",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "IsSalesperson",
+            "dataType": "boolean",
+            "sourceColumn": "IsSalesperson",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_People",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [agg].[DimPeople].*   FROM [agg].[DimPeople] ",
+              "dataSource": "SqlServer sqlvm34666 DestinationDatabase"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [agg].[DimPeople].*   FROM [agg].[DimPeople] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimPeople"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "agg"
+          }
+        ]
+      },
+      {
+        "name": "D_StockItems",
+        "columns": [
+          {
+            "name": "StockItemID",
+            "dataType": "int64",
+            "sourceColumn": "StockItemID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "StockItemName",
+            "dataType": "string",
+            "sourceColumn": "StockItemName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StockGroupName",
+            "dataType": "string",
+            "sourceColumn": "StockGroupName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SupplierID",
+            "dataType": "int64",
+            "sourceColumn": "SupplierID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ColorName",
+            "dataType": "string",
+            "sourceColumn": "ColorName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UnitPackageID",
+            "dataType": "int64",
+            "sourceColumn": "UnitPackageID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OuterPackageID",
+            "dataType": "int64",
+            "sourceColumn": "OuterPackageID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "QuantityPerOuter",
+            "dataType": "int64",
+            "sourceColumn": "QuantityPerOuter",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TaxRate",
+            "dataType": "double",
+            "sourceColumn": "TaxRate",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RecommendedRetailPrice",
+            "dataType": "double",
+            "sourceColumn": "RecommendedRetailPrice",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_StockItems",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [agg].[DimStockItems].*   FROM [agg].[DimStockItems] ",
+              "dataSource": "SqlServer sqlvm34666 DestinationDatabase"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [agg].[DimStockItems].*   FROM [agg].[DimStockItems] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimStockItems"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "agg"
+          }
+        ]
+      },
+      {
+        "name": "F_Invoices",
+        "columns": [
+          {
+            "name": "InvoiceLineID",
+            "dataType": "int64",
+            "sourceColumn": "InvoiceLineID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InvoiceID",
+            "dataType": "int64",
+            "sourceColumn": "InvoiceID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "CustomerID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OrderID",
+            "dataType": "int64",
+            "sourceColumn": "OrderID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DeliveryMethodID",
+            "dataType": "int64",
+            "sourceColumn": "DeliveryMethodID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ContactPersonID",
+            "dataType": "int64",
+            "sourceColumn": "ContactPersonID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AccountsPersonID",
+            "dataType": "int64",
+            "sourceColumn": "AccountsPersonID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalespersonPersonID",
+            "dataType": "int64",
+            "sourceColumn": "SalespersonPersonID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "StockItemID",
+            "dataType": "int64",
+            "sourceColumn": "StockItemID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PackageTypeID",
+            "dataType": "int64",
+            "sourceColumn": "PackageTypeID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InvoiceDate",
+            "dataType": "string",
+            "sourceColumn": "InvoiceDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "InvoiceDateID",
+            "dataType": "int64",
+            "sourceColumn": "InvoiceDateID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerPurchaseOrderNumber",
+            "dataType": "string",
+            "sourceColumn": "CustomerPurchaseOrderNumber",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ConfirmedDeliveryTime",
+            "dataType": "string",
+            "sourceColumn": "ConfirmedDeliveryTime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TaxRate",
+            "dataType": "double",
+            "sourceColumn": "TaxRate",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TaxAmount",
+            "dataType": "double",
+            "sourceColumn": "TaxAmount",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "LineProfit",
+            "dataType": "double",
+            "sourceColumn": "LineProfit",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ExtendedPrice",
+            "dataType": "double",
+            "sourceColumn": "ExtendedPrice",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "F_Invoices",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [agg].[FactInvoices].*   FROM [agg].[FactInvoices] ",
+              "dataSource": "SqlServer sqlvm34666 DestinationDatabase"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [agg].[FactInvoices].*   FROM [agg].[FactInvoices] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FactInvoices"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "agg"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "76f53e0b-7d89-4cc3-a2ac-4d617b38ce13",
+        "fromTable": "F_Invoices",
+        "fromColumn": "StockItemID",
+        "toTable": "D_StockItems",
+        "toColumn": "StockItemID"
+      },
+      {
+        "name": "16cdc0bc-c067-4453-b8a5-94aa5c22bde4",
+        "fromTable": "F_Invoices",
+        "fromColumn": "ContactPersonID",
+        "toTable": "D_People",
+        "toColumn": "PersonID"
+      },
+      {
+        "name": "62be82b2-b6e5-43c0-af57-f8919941ecc1",
+        "fromTable": "F_Invoices",
+        "fromColumn": "CustomerID",
+        "toTable": "D_Customers",
+        "toColumn": "CustomerID"
+      },
+      {
+        "name": "2dc7567c-bfdb-4ee2-92b7-5ad6dce2ccf8",
+        "fromTable": "F_Invoices",
+        "fromColumn": "InvoiceDateID",
+        "toTable": "D_Date",
+        "toColumn": "ID"
+      },
+      {
+        "name": "129557a3-7718-46b5-a863-0f1485e24cf6",
+        "fromTable": "F_Invoices",
+        "fromColumn": "DeliveryMethodID",
+        "toTable": "D_DeliveryMethods",
+        "toColumn": "DeliveryMethodID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

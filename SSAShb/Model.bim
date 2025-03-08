@@ -42,6 +42,7 @@
           {
             "name": "CreditLimit",
             "dataType": "double",
+            "isHidden": true,
             "sourceColumn": "CreditLimit",
             "sourceProviderType": "Numeric"
           },
@@ -60,12 +61,14 @@
           {
             "name": "PhoneNumber",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "PhoneNumber",
             "sourceProviderType": "WChar"
           },
           {
             "name": "EmailAddress",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "EmailAddress",
             "sourceProviderType": "WChar"
           },
@@ -122,17 +125,21 @@
       },
       {
         "name": "D_Date",
+        "dataCategory": "Time",
         "columns": [
           {
             "name": "ID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ID",
             "sourceProviderType": "Integer"
           },
           {
             "name": "TheDate",
-            "dataType": "string",
+            "dataType": "dateTime",
+            "isKey": true,
             "sourceColumn": "TheDate",
+            "formatString": "General Date",
             "sourceProviderType": "WChar"
           },
           {
@@ -192,12 +199,14 @@
           {
             "name": "TheFirstOfMonth",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "TheFirstOfMonth",
             "sourceProviderType": "WChar"
           },
           {
             "name": "TheLastOfYear",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "TheLastOfYear",
             "sourceProviderType": "WChar"
           },
@@ -306,6 +315,7 @@
           {
             "name": "IsSystemUser",
             "dataType": "boolean",
+            "isHidden": true,
             "sourceColumn": "IsSystemUser",
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "Boolean"
@@ -313,6 +323,7 @@
           {
             "name": "IsEmployee",
             "dataType": "boolean",
+            "isHidden": true,
             "sourceColumn": "IsEmployee",
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "Boolean"
@@ -320,6 +331,7 @@
           {
             "name": "IsSalesperson",
             "dataType": "boolean",
+            "isHidden": true,
             "sourceColumn": "IsSalesperson",
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "Boolean"
@@ -375,6 +387,7 @@
           {
             "name": "SupplierID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "SupplierID",
             "sourceProviderType": "Integer"
           },
@@ -387,12 +400,14 @@
           {
             "name": "UnitPackageID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "UnitPackageID",
             "sourceProviderType": "Integer"
           },
           {
             "name": "OuterPackageID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "OuterPackageID",
             "sourceProviderType": "Integer"
           },
